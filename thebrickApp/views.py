@@ -1,31 +1,69 @@
 from collections import UserDict, UserList
-from .forms import CustomUserCreationForm, ProductoForm, Producto
+from .forms import ProductoForm, Producto
 from django.shortcuts import render,redirect, get_object_or_404
-from .forms import CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
-from .forms import CustomUserCreationForm
-from django.contrib.auth import authenticate, login
-from django.contrib import admin
 from django.contrib import messages
 from thebrickApp.Carrito import Carrito
+from .forms import FormularioLogin, FormularioRegistro
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login
 
-def registro(request):
-    data = {
-        'form' : CustomUserCreationForm()
-    }
+
+
+#Registro
+def mostrar_registro(request):
+    if request.method == 'GET':
+        contexto = {
+            'formulario': FormularioRegistro()
+        }
+        return render(request,'registration/registro.html', contexto)
     if request.method == 'POST':
-        formulario = CustomUserCreationForm(data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
-            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
-            login(request,)
-            return redirect(to="index")
-        data["form"] = formulario
-    return render(request,'registration/registro.html',data)
+        datos_formulario = FormularioRegistro(data=request.POST)
+        print(datos_formulario.data)
+        es_valido = datos_formulario.is_valid()
+        print(es_valido)
+        if es_valido: # Preguntamos por el True
+            datos_formulario.save()
+            username = datos_formulario.cleaned_data['username']
+            (request, f'gracias por registrarte { username }')
+            return redirect('login')
+        contexto = {
+            'formulario': datos_formulario
+        }
+    return render(request,'registration/registro.html',contexto)
 
-def login(request):
-    return render(request,'registration/login.html')
+#Login
+
+def mostrar_entrar(request):
+    if request.method == 'GET':
+        contexto = {
+            'formulario':FormularioLogin(),
+            'titulo':'Bienvenido',
+            'formulario_original': AuthenticationForm()
+        }
+        return render(request, 'registration/login.html',contexto)
+    elif request.method == 'POST':
+        datos_usuario = AuthenticationForm(data=request.POST)
+        print(datos_usuario.data)
+        es_valido = datos_usuario.is_valid()
+        print(datos_usuario.errors)
+        if es_valido:
+            username = datos_usuario.cleaned_data['username']
+            password = datos_usuario.cleaned_data['password']
+            print(username,password)
+            usuario = authenticate(username=username,password=password)
+            if usuario is not None:
+                login(request,usuario)
+                return redirect('index')
+            else:
+                # Mandar al lobby
+                return redirect('index')
+        contexto = {
+            'titulo':'Bienvenido',
+            'formulario_original': datos_usuario,
+            'formulario':FormularioLogin()
+        }
+
 
 def index(request):
     return render(request,'index.html')

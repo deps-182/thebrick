@@ -11,27 +11,74 @@
 </head>
 <body>
     {% load crispy_forms_tags %}
-    <div class="container">
-      <br>
-      <br>
-      <br>
-        <div class="col-12 col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h2>Registro de Usuario</h2>
-                    <hr>
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        {{ form | crispy }}
-                        <a href="{% url 'index' %}">Volver</a>
-                        <a href="{% url 'login' %}">Iniciar Sesion</a>
-                        <input type="submit" value="Registrar" class="btn btn-success float-right">
-                    </form>    
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <main class="container">
+        <form method="POST">
+            <section class="row">
+                <h1>Bienvenido</h1>
+            </section>
+            <section class="row">
+                <fieldset class="col-12">
+                    <label for="">{{ formulario.username.label }}</label>
+                    {{ formulario.username }}
+                    <p class="invalid-feedback">
+                        {{ formulario.username.error }}
+                    </p>
+                </fieldset>
+            </section>
+            <section class="row">
+                <fieldset class="col-6">
+                    <label for="">{{ formulario.first_name.label }}</label>
+                    {{ formulario.first_name }}
+                    <p class="invalid-feedback">
+                        {{ formulario.first_name.error }}
+                    </p>
+                </fieldset>
+                <fieldset class="col-6">
+                    <label for="">{{ formulario.last_name.label }}</label>
+                    {{ formulario.last_name }}
+                    <p class="invalid-feedback">
+                        {{ formulario.last_name.error }}
+                    </p>
+                </fieldset>
+            </section>
+            <section class="row">
+                <fieldset class="col-12">
+                    <label for="">{{ formulario.email.label }}</label>
+                    {{ formulario.email }}
+                    <p class="invalid-feedback">
+                        {{ formulario.email.error }}
+                    </p>
+                </fieldset>
+            </section>
+            <section class="row">
+                <fieldset class="col-6">
+                    <label for="">{{ formulario.password1.label }}</label>
+                    {{ formulario.password1 }}
+                    {{ formulario.password1.help_text }}
+                    <p class="invalid-feedback">
+                        {{ formulario.password1.error }}
+                    </p>
+                </fieldset>
+                <fieldset class="col-6">
+                    <label for="">{{ formulario.password2.label }}</label>
+                    {{ formulario.password2 }}
+                    {{ formulario.password2.help_text }}
+                    <p class="invalid-feedback">
+                        {{ formulario.password2.error }}
+                    </p>
+                </fieldset>
+            </section>
+            {% csrf_token %}
+            <section class="row">
+                <fieldset class="col">
+                    <button class="btn btn-success" role="submit" type="submit">Registrar</button>
+                    <button class="btn btn-danger" role="submit" type="submit" href="{% url 'index' %}">Volver</button>
+                    <button class="btn btn-success" role="submit" type="submit" href="{% url 'login' %}">Iniciar Sesión</button>
+                </fieldset>
+            </section>
+            
+        </form>
+    </main>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
