@@ -1,0 +1,295 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tendencias.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel = "icon" href = "https://cdn-icons-png.flaticon.com/512/605/605813.png" type = "image/x-icon">
+</head >
+<script src="https://kit.fontawesome.com/6f8311c632.js" crossorigin="anonymous"></script>
+<style>
+
+</style>
+
+
+  
+<nav class="navbar sticky-top bg-dark" data-bs-theme="dark" data-bs-theme="dark" style="padding-top: 5px;" style="height:1px;">
+  <ul class="d-flex flex-grow-1 nav-pills nav-fill" style="height: 1px;">
+    <li class="nav-item position-absolute top-0 end-0" style="padding-right:2%">
+       <a class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#modalUsuario" style="color:white;">Registrarse/Login
+        <i class="bi bi-person-circle"></i></a>
+    </li>
+  </ul>
+</nav>
+
+<!----------------Modal---------------------->
+<div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">¡Bienvenido!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          Ingresa a tu cuenta:
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Correo:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Contraseña:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-dark">Ingresar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!----------------NavBar--------------------->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <div>
+        <a class="nav-link active fw-semibold" aria-current="page" href="{% url 'index' %}">
+        <img src="{% static 'Images/logo-thebrick-500x100px.png' %}" alt="Bootstrap" width="30%" height="30%">
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" aria-current="page" href="{% url 'lanzamiento' %}">Lanzamientos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:black;" href="{% url 'hombre' %}">Hombre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color:black;" href="{% url 'mujer' %}">Mujer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " style="color:black;" href="#">Infantil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold " style="color:black;" href="{% url 'oferta' %}">Ofertas</a>
+          </li>
+        </ul>
+        <button class="btn btn-light" type="submit">
+          <i class="bi bi-cart"></i>
+        </button>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-dark" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<h1 style="font-size: 70px; text-align: center;padding: 20px">Lanzamientos nuevos </h1>
+
+   
+       <center> <table border=""  class="default" ></center>
+
+    <tr>
+
+
+
+      <div class="container text-center">
+        <div class="row align-items-center">
+          <div class="col" >
+            <div  class="card" style="background-color: rgb(227, 233, 236);" style="width: 25rem;">
+              <a href="http://127.0.0.1:5500/zapaaaa.jpg"><img src="{% static 'images/zapaaaa.jpg' %}" alt="zaàs god" class="card-img-top" alt="..."> </a>  
+              <div class="card-body">
+                <h5 class="card-title">Jordan Retro 1</h5>
+                <p class="card-text">$199.000.CLP</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">COMPRAR</a>
+                <a href="#" class="card-link"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+            </div>
+          
+          </div>
+          <div class="col">
+            <div class="card" style="background-color: rgb(227, 233, 236);" style="width: 25rem;">
+              <a href="https://nikeclprod.vteximg.com.br/arquivos/ids/648606-1000-1000/DV0792_100_A_PREM.jpg?v=638091334315330000"><img src="{% static 'images/2.jpg' %}" alt="zaàs god" class="card-img-top" alt="..."> </a>  
+              <div class="card-body">
+                <h5 class="card-title">Air Force Mid</h5>
+                <p class="card-text">$142.990.CLP</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">COMPRAR</a>
+                <a href="#" class="card-link"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="background-color: rgb(227, 233, 236);" style="width: 25rem;">
+              <a href="https://nikeclprod.vteximg.com.br/arquivos/ids/644853-1000-1000/DV1160_101_A_PREM.jpg?v=638085325807900000"><img src="{% static 'images/123456.jpg' %}" alt="zaàs god" class="card-img-top" alt="..."> </a>  
+              <div class="card-body">
+                <h5 class="card-title">W Dunk Low</h5>
+                <p class="card-text">$139.990.CLP</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">COMPRAR</a>
+                <a href="#" class="card-link"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+<center><table border="outset" class="default"</center>
+<h1>
+
+</h1>
+
+
+<div class="container text-center">
+  <div class="row align-items-center">
+    <div class="col">
+      <div class="card" style="background-color: rgb(227, 233, 236);" style="width: 25rem;">
+        <a href="https://nikeclprod.vteximg.com.br/arquivos/ids/629944-1000-1000/DO7193_051_A_PREM.jpg?v=638047232226370000"><img src="{% static 'images/4.jpg' %}" alt="zaàs god" class="card-img-top" alt="..."> </a>  
+        <div class="card-body">
+          <h5 class="card-title">Jordan One Take 4        </h5>
+          <p class="card-text">$204.000.CLP</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">COMPRAR</a>
+          <a href="#" class="card-link"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+   
+    </div>
+    <div class="col">
+      <div class="card" style="background-color: rgb(227, 233, 236);" style="width: 25rem;">
+        <a href="https://nikeclprod.vteximg.com.br/arquivos/ids/638457-1000-1000/DR0148_100_A_PREM-hei-3144-wid-3144-fmt.jpg?v=638078771436000000"><img src="{% static 'images/5.jpg' %}" alt="zaàs god" class="card-img-top" alt="..."> </a>  
+        <div class="card-body">
+          <h5 class="card-title">Air Force Lx</h5>
+          <p class="card-text">$139.990.CLP</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">COMPRAR</a>
+          <a href="#" class="card-link"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="background-color: rgb(227, 233, 236);" style="width: 25rem;">
+        <a href="https://nikeclprod.vteximg.com.br/arquivos/ids/638457-1000-1000/DR0148_100_A_PREM-hei-3144-wid-3144-fmt.jpg?v=638078771436000000"><img src="{% static 'images/6.jpg' %}" alt="zaàs god" class="card-img-top" alt="..."> </a>  
+        <div class="card-body">
+          <h5 class="card-title">Air Jordan XXXVII</h5>
+          <p class="card-text">$204.000.CLP</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">COMPRAR</a>
+          <a href="#" class="card-link" ><i class="fa-solid fa-cart-shopping"> </i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" style="color: black;">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
+    <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
+    <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" style="color: black;">Next</a>
+    </li>
+  </ul>
+</nav>
+<!-----------------------Footer---------------------------->
+
+<footer class="bg-dark text-white py-4">
+  <div class="container">
+    <div class="row">
+      <!-- logo -->
+      <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
+        <img src=" {% static 'Images/logo-thebrick-500x100px-blanco.png' %} " height="30%" width="70%">
+      </a> 
+      <!-- menu -->
+      <ul class="col-3 list-unstyled">
+        <li class="font-weight-bold text-uppercase">Ayuda</li>
+        <li><a href="#" class="nav-link fw-light">Seguimiento de pedido</a></li>
+        <li><a href="#" class="nav-link fw-light">Preguntas frecuentes</a></li>
+        <li><a href="#" class="nav-link fw-light">Términos y condiciones</a></li>
+        <li><a href="#" class="nav-link fw-light">Cambios y devoluciones</a></li>
+      </ul>
+      <!-- menu2 -->
+      <ul class="col-3 list-unstyled">
+        <li class="font-weight-bold text-uppercase">Acerca de THE BRICK</li>
+        <li><a href="#" class="nav-link fw-light">Empleos</a></li>
+        <li><a href="#" class="nav-link fw-light">Inversionistas</a></li>
+        <li><a href="#" class="nav-link fw-light">Sustentabilidad</a></li>
+        <li><a href="#" class="nav-link fw-light">Nosotros</a></li>
+      </ul>
+      <!-- redes sociales -->
+      <ul class="col-3 list-unstyled">
+        <li class="font-weight-bold text-uppercase">Redes Sociales</li>
+        <li class="d-flex justify-content-between">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com" class="text-reset">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <!-- Twitter -->
+          <a href="https://www.twitter.com" class="text-reset">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com" class="text-reset">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <!-- Pinterest -->
+          <a href="www.pinterest.com" class="text-reset">
+            <i class="bi bi-pinterest"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>

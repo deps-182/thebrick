@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the BRICK | Tienda Oficial</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel = "icon" href = "https://cdn-icons-png.flaticon.com/512/605/605813.png" type = "image/x-icon">
+</head>
+
+    <body>
+        {% load humanize %}
+        <div class="card">
+            <div class="card-body">
+                <h2>Stock de Productos</h2>
+                    <a href="{% url 'index' %}" class="btn btn-secondary">Volver</a>
+                    <br>
+                    <br>
+                    <table class="table table-striped table-hover table-responsive-sm">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Marca</th>
+                            <th>Descripcion</th>
+                            <th>Genero</th>
+                            <th>Talla</th>
+                            <th>Opciones</th>
+                        </tr>
+
+                        {% for p in producto %}
+            
+                        <tr>
+                            <td>{{ p.nombre | title }}</td>
+                            <td>${{ p.precio | intcomma }}</td>
+                            <td>{{ p.marca | title }}</td>
+                            <td>{{ p.descripcion | title }}</td>
+                            <td>{{ p.genero | title }}</td>
+                            <td>{{ p.talla | intcomma }}</td>
+                            <td>
+                                <a href="{% url 'modificar' p.id %}" class="btn btn-info btn-sm">Modificar</a>
+                                <a href="{% url 'eliminar' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                            </td>
+                        </tr>
+            
+            
+                        {% endfor %}
+
+                    </table>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

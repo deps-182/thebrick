@@ -1,0 +1,453 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the BRICK | Tienda Oficial</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel = "icon" href = "https://cdn-icons-png.flaticon.com/512/605/605813.png" type = "image/x-icon">
+  </head>
+  <body>
+    <!----------------Barra Superior------------->
+
+    <nav class="navbar sticky-top bg-dark" data-bs-theme="dark" data-bs-theme="dark" style="padding-top: 5px;" style="height:1px;">
+      <ul class="d-flex flex-grow-1 nav-pills nav-fill" style="height: 1px;">
+        <li class="nav-item position-absolute top-0 end-0" style="padding-right:2%">
+           <a class="nav-link fw-bold" data-bs-toggle="modal" data-bs-target="#modalUsuario" style="color:white;">Registrarse/Login
+            <i class="bi bi-person-circle"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+<!----------------Modal---------------------->
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">¡Bienvenido!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              Ingresa a tu cuenta:
+            </div>
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Correo:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Contraseña:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-dark">Ingresar</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+
+<!----------------NavBar--------------------->
+      <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+          <div>
+            <a class="nav-link active fw-semibold" aria-current="page" href="{% url 'index' %}">
+            <img src="{% static 'Images/logo-thebrick-500x100px.png' %}" alt="Bootstrap" width="30%" height="30%">
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active fw-semibold" aria-current="page" href="{% url 'lanzamiento' %}">Lanzamientos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:black;" href="{% url 'hombre' %}">Hombre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color:black;" href="{% url 'mujer' %}">Mujer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " style="color:black;" href="#">Infantil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-semibold " style="color:black;" href="">Ofertas</a>
+              </li>
+            </ul>
+            <button class="btn btn-light" type="submit">
+              <i class="bi bi-cart"></i>
+            </button>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-dark" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <br>
+    
+     
+    <br>
+    <!-- Carrusel -->
+    <div class="col align-self-center">
+    <h1 class="display-6" style="font-weight: bolder;">Ofertas Destacadas</h1><!-- texto -->
+      </div>
+    <div id="carouselExample" class="carousel slide" style="width: 50%; height: 90%;" >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <!-- Imagen -->
+        <div class="carousel-item">
+          <img src="{% static 'Images/modelo2.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <!-- Imagen -->
+        <div class="carousel-item">
+          <img src="{% static 'Images/modelo3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+  <br>
+  
+  <!-- Card -->
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo1.jpg' %}" class="card-img-top" alt="..." style="width: 70%;">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Jordan Air Jordan 1 Retro High OG Black Toe</h5>
+            <p class="card-text">$147.990-50%=$73.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="col">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo2.jpg' %}" class="card-img-top" alt="..." style="width: 55%;">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Jordan AIR JORDAN 1 MID SE</h5>
+            <p class="card-text">$147.990-50%=$73.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="col">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo3.jpg' %}" class="card-img-top" alt="..."style="width:65%">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Air Jordan 1 Retro High OG “Yellow Toe”</h5>
+            <p class="card-text">$147.990-50%=$73.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="col">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo4.jpg' %}" class="card-img-top" alt="..." style="width: 50%;">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Air Jordan 1 Mid SE 'Space Jam'</h5>
+            <p class="card-text">$139.990-35%=$90.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- Card -->
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo5.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Air Jordan 1 Mid SE Panda</h5>
+            <p class="card-text">$139.990-35%=$90.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="col ">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo6.jpg' %}" class="card-img-top" alt="" style="width: 70%;" >
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Jordan AIR JORDAN 4 RETRO SP</h5>
+            <p class="card-text">$129.990-35%=$84.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="col">
+        <div class="card">
+          <!-- Imagen -->
+          <img src="{% static 'Images/modelo7.jpg' %}" class="card-img-top" alt="..." style="width: 70%;">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Jordan AIR JORDAN 1 LAKERS</h5>
+            <p class="card-text">$108.990-30%=$77.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'Images/modelo8.jpg' %}" class="card-img-top" alt="..." style="width: 70%;">
+          <div class="card-body">
+            <!-- texto -->
+            <h5 class="card-title">Air jordan 3 Retro</h5>
+            <p class="card-text">$209,990 -30% = 146.990</p>
+            <button type="button" class="btn btn-primary" style="background-color: black;">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <BR></BR>
+    <!-- Cambio de pagina -->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <!-- logo -->
+        <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
+          <img src="{% static 'Images/logo-thebrick-500x100px-blanco.png' %}" height="30%" width="80%">
+        </a> 
+        <!-- menu -->
+        <ul class="col-3 list-unstyled">
+          <li class="font-weight-bold text-uppercase">Ayuda</li>
+          <li><a href="#" class="nav-link fw-light">Seguimiento de pedido</a></li>
+          <li><a href="#" class="nav-link fw-light">Preguntas frecuentes</a></li>
+          <li><a href="#" class="nav-link fw-light">TÃ©rminos y condiciones</a></li>
+          <li><a href="#" class="nav-link fw-light">Cambios y devoluciones</a></li>
+        </ul>
+        <!-- menu2 -->
+        <ul class="col-3 list-unstyled">
+          <li class="font-weight-bold text-uppercase">Acerca de THE BRICK</li>
+          <li><a href="#" class="nav-link fw-light">Empleos</a></li>
+          <li><a href="#" class="nav-link fw-light">Inversionistas</a></li>
+          <li><a href="#" class="nav-link fw-light">Sustentabilidad</a></li>
+          <li><a href="#" class="nav-link fw-light">Nosotros</a></li>
+        </ul>
+        <!-- redes sociales -->
+        <ul class="col-3 list-unstyled">
+          <li class="font-weight-bold text-uppercase">Redes Sociales</li>
+          <li class="d-flex justify-content-between">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com" class="text-reset">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <!-- Twitter -->
+            <a href="https://www.twitter.com" class="text-reset">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com" class="text-reset">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <!-- Pinterest -->
+            <a href="www.pinterest.com" class="text-reset">
+              <i class="bi bi-pinterest"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Valida que los campos no esten el blanco-->    
+<script>
+  $(document).ready(function(){
+      $("#Registrar").click(function(){
+        var nombre = $("#miNombre").val();
+        var correo = $("#miGmail").val();
+        var contraseña = $("#miContraseña").val();
+        if(nombre==""){
+          $("#mensaje1").fadeIn()  
+          return false;
+        }else{
+          $("#mensaje1").fadeOut();
+          if(correo==""){
+            $("mensaje2").fadeIn();
+            return false
+          }else{
+            $("mensaje2").fadeOut();
+            if(contraseña==""){
+            $("mensaje3").fadeIn();
+            return false;
+            }
+          }
+        }
+      })
+
+      
+  });
+</script>
+
+
+ 
+
+
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="{% static 'jQuery/jquery-3.5.1.min.js' %}" ></script>
+    <script src="{% static 'bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js' %}" ></script>
+
+    <script>
+      $('.carousel').carousel({
+        interval: 2000
+      })
+    </script>
+
+    
+    <script>
+      //Por Javascript
+      function sumar(){
+        var n1 = document.getElementById("numero1").value;
+        var n2 = document.getElementById("numero2").value;
+                //  1 + 1=11
+        var suma =parseInt(n1) + parseInt(n2);
+
+        document.getElementById("res").value= suma;
+      }
+    </script>
+
+    <script>
+      //Por jQuery
+      $(document).ready( function(){
+          $("#sumarNumeros").click( function(){
+              var n1 = parseInt( $("#numero1").val() );
+              var n2 = parseInt( $("#numero2").val() );
+              var suma = n1+n2;
+              $("#res").val(suma);
+          });
+
+      });
+
+    </script>
+
+    <script>
+      function validar(f){
+        var correcto = true;
+        var mensaje = "Campos vacios:";
+
+        if(f.elements[4].value==""){
+            correcto=false;
+            mensaje = mensaje + "-Nombre";
+        }
+
+        if(f.elements["duenio"].value==""){
+            correcto=false;
+            mensaje = mensaje + "-Dueño";
+        }
+
+        if(f.elements.codigo.value==""){
+            correcto=false;
+            mensaje = mensaje + "-Codigo";
+        }
+
+        if(correcto==false){
+          alert(mensaje);
+        }
+
+        return correcto;
+      }
+    </script>
+
+    <script type="text/javascript" >
+
+        $(document).ready(function(){
+
+            $("#mostrar").click( function(){
+
+              $.get("https://www.themealdb.com/api/json/v1/1/categories.php",
+              
+              function(data){
+                  $.each(data.categories,function(i, item){
+
+                    $("#categorias").append(
+                        "<tr><td>"+item.idCategory+"</td><td>"+item.strCategory+
+                        "</td><td><img src='"+item.strCategoryThumb+"'>"+
+                        "</td><td>"+item.strCategoryDescription+"</td></tr>");
+
+                  });
+
+              });
+
+            });
+        });
+
+    </script>
+
+   
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
